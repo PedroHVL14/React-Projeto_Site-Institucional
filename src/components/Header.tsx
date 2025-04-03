@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,21 +16,21 @@ const Header = () => {
     <header className="sticky top-0 bg-white shadow-md z-50">
       <div className="container flex justify-between items-center py-4">
         <Link to="/" className="flex items-center">
-          <span className="text-2xl font-bold text-tech-blue">TechSpark</span>
+          <Logo />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-700 hover:text-tech-blue transition-colors">
+          <Link to="/" className="text-gray-700 hover:text-tech-green transition-colors">
             Início
           </Link>
-          <a href="#services" className="text-gray-700 hover:text-tech-blue transition-colors">
+          <a href="#services" className="text-gray-700 hover:text-tech-green transition-colors">
             Serviços
           </a>
-          <a href="#portfolio" className="text-gray-700 hover:text-tech-blue transition-colors">
+          <a href="#portfolio" className="text-gray-700 hover:text-tech-green transition-colors">
             Portfólio
           </a>
-          <a href="#contact" className="text-gray-700 hover:text-tech-blue transition-colors">
+          <a href="#contact" className="text-gray-700 hover:text-tech-green transition-colors">
             Contato
           </a>
           <Button className="bg-tech-blue hover:bg-tech-lightblue text-white">

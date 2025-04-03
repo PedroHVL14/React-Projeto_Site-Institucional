@@ -1,7 +1,7 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import Logo from "./Logo";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-xl font-bold mb-4">TechSpark</h3>
+            <Logo className="text-white mb-4" />
             <p className="mb-4 text-gray-300">
               Soluções tecnológicas inovadoras para transformar seu negócio e impulsionar seu crescimento.
             </p>
@@ -99,7 +99,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-          <p>&copy; {currentYear} TechSpark. Todos os direitos reservados.</p>
+          <p>&copy; {currentYear} TecBrasil. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

@@ -16,10 +16,13 @@ const HeroSection = () => {
               Desenvolvimento de software personalizado, consultoria em TI e soluções digitais para empresas que buscam inovação e crescimento.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-white text-tech-blue hover:bg-gray-100 text-base px-6 py-6">
+              <Button className="bg-tech-green text-white hover:bg-tech-blue text-base px-6 py-6">
                 Conheça Nossos Serviços
               </Button>
-              <Button variant="outline" className="border-white text-white hover:bg-white/10 text-base px-6 py-6">
+              <Button 
+                variant="outline" 
+                className="border-tech-yellow text-tech-yellow hover:bg-tech-yellow/10 text-base px-6 py-6"
+              >
                 Fale Conosco <ArrowRight size={16} className="ml-2" />
               </Button>
             </div>
@@ -27,7 +30,7 @@ const HeroSection = () => {
           
           <div className="hidden lg:block">
             <img 
-              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+              src="https://images.unsplash.com/photo-1518495973542-4542c06a5843" 
               alt="Profissionais trabalhando com tecnologia" 
               className="rounded-lg shadow-lg object-cover w-full h-[500px]"
             />
