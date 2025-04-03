@@ -29,20 +29,20 @@ const ContactSection = () => {
     <section id="contact" className="bg-gradient-to-r from-[#0FFAFA] to-[#18CDCA] py-20">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="text-white space-y-6">
-            <h2 className="text-4xl font-bold font-heading">Entre em Contato</h2>
-            <p className="text-lg opacity-90 max-w-lg">
+          <div className="text-black space-y-6"> {/* Changed text color to black */}
+            <h2 className="text-4xl font-bold font-heading text-black">Entre em Contato</h2>
+            <p className="text-lg opacity-90 max-w-lg text-black">
               Estamos prontos para ajudar seu negócio a alcançar seu potencial máximo com nossas soluções tecnológicas.
             </p>
             
             <div className="space-y-6 mt-8">
               <div className="flex items-start">
                 <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <MapPin size={24} className="text-white" />
+                  <MapPin size={24} className="text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Endereço</h4>
-                  <p className="opacity-90">
+                  <h4 className="font-semibold text-lg text-black">Endereço</h4>
+                  <p className="opacity-90 text-black">
                     Av. Tecnologia, 1000, São Paulo, SP - Brasil
                   </p>
                 </div>
@@ -50,21 +50,21 @@ const ContactSection = () => {
 
               <div className="flex items-start">
                 <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <Phone size={24} className="text-white" />
+                  <Phone size={24} className="text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Telefone</h4>
-                  <p className="opacity-90">+55 (11) 3456-7890</p>
+                  <h4 className="font-semibold text-lg text-black">Telefone</h4>
+                  <p className="opacity-90 text-black">+55 (11) 3456-7890</p>
                 </div>
               </div>
 
               <div className="flex items-start">
                 <div className="bg-white/10 p-3 rounded-full mr-4">
-                  <Mail size={24} className="text-white" />
+                  <Mail size={24} className="text-black" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-lg">Email</h4>
-                  <p className="opacity-90">contato@tecbrasil.com.br</p>
+                  <h4 className="font-semibold text-lg text-black">Email</h4>
+                  <p className="opacity-90 text-black">contato@tecbrasil.com.br</p>
                 </div>
               </div>
             </div>
