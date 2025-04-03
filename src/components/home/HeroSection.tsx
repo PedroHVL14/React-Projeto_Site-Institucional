@@ -2,10 +2,11 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Link as ScrollLink } from "react-scroll";
 
 const HeroSection = () => {
   return (
-    <section className="bg-gradient-to-r from-tech-blue to-tech-lightblue text-white py-20 md:py-32">
+    <section id="home" className="bg-gradient-to-r from-tech-blue to-tech-lightblue text-white py-20 md:py-32">
       <div className="container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
@@ -16,15 +17,18 @@ const HeroSection = () => {
               Desenvolvimento de software personalizado, consultoria em TI e soluções digitais para empresas que buscam inovação e crescimento.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-tech-green text-white hover:bg-tech-blue text-base px-6 py-6">
-                Conheça Nossos Serviços
-              </Button>
-              <Button 
-                variant="outline" 
-                className="border-tech-yellow text-tech-yellow hover:bg-tech-yellow/10 text-base px-6 py-6"
-              >
-                Fale Conosco <ArrowRight size={16} className="ml-2" />
-              </Button>
+              <ScrollLink to="services" smooth={true} duration={500} offset={-100}>
+                <Button className="bg-tech-blue hover:bg-tech-lightblue text-white border-2 border-tech-green text-base px-6 py-6 w-full sm:w-auto transition-all duration-300 hover:shadow-lg">
+                  Conheça Nossos Serviços
+                </Button>
+              </ScrollLink>
+              <ScrollLink to="contact" smooth={true} duration={500} offset={-100}>
+                <Button 
+                  className="bg-tech-blue hover:bg-tech-lightblue text-white border-2 border-tech-yellow text-base px-6 py-6 w-full sm:w-auto transition-all duration-300 hover:shadow-lg"
+                >
+                  Fale Conosco <ArrowRight size={16} className="ml-2" />
+                </Button>
+              </ScrollLink>
             </div>
           </div>
           

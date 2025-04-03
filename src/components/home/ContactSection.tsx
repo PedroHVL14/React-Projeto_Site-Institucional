@@ -3,8 +3,9 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/components/ui/use-toast";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ArrowRight } from "lucide-react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -25,134 +26,137 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="section bg-tech-gray">
+    <section id="contact" className="bg-gradient-to-r from-[#0FFAFA] to-[#18CDCA] py-20">
       <div className="container">
-        <h2 className="section-title">Entre em Contato</h2>
-        <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-          Estamos prontos para ajudar seu negócio a alcançar seu potencial máximo com nossas soluções tecnológicas.
-        </p>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-2xl font-bold mb-6 text-tech-blue">Envie uma Mensagem</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="text-white space-y-6">
+            <h2 className="text-4xl font-bold font-heading">Entre em Contato</h2>
+            <p className="text-lg opacity-90 max-w-lg">
+              Estamos prontos para ajudar seu negócio a alcançar seu potencial máximo com nossas soluções tecnológicas.
+            </p>
             
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label htmlFor="name" className="block text-sm font-medium">
-                    Nome Completo
-                  </label>
-                  <Input
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="Seu nome"
-                    className="w-full"
-                  />
+            <div className="space-y-6 mt-8">
+              <div className="flex items-start">
+                <div className="bg-white/10 p-3 rounded-full mr-4">
+                  <MapPin size={24} className="text-white" />
                 </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="email" className="block text-sm font-medium">
-                    Email
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    placeholder="seu@email.com"
-                    className="w-full"
-                  />
+                <div>
+                  <h4 className="font-semibold text-lg">Endereço</h4>
+                  <p className="opacity-90">
+                    Av. Tecnologia, 1000, São Paulo, SP - Brasil
+                  </p>
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="subject" className="block text-sm font-medium">
-                  Assunto
+              <div className="flex items-start">
+                <div className="bg-white/10 p-3 rounded-full mr-4">
+                  <Phone size={24} className="text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">Telefone</h4>
+                  <p className="opacity-90">+55 (11) 3456-7890</p>
+                </div>
+              </div>
+
+              <div className="flex items-start">
+                <div className="bg-white/10 p-3 rounded-full mr-4">
+                  <Mail size={24} className="text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold text-lg">Email</h4>
+                  <p className="opacity-90">contato@tecbrasil.com.br</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Contact Form */}
+          <div className="bg-white rounded-lg shadow-xl p-8">
+            <h3 className="text-2xl font-bold mb-6 text-tech-blue">Solicite um orçamento</h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="space-y-3">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                  Nome*
                 </label>
                 <Input
-                  id="subject"
-                  name="subject"
+                  id="name"
+                  name="name"
                   required
-                  placeholder="Como podemos ajudar?"
-                  className="w-full"
+                  placeholder="Seu nome completo"
+                  className="w-full bg-gray-50"
+                />
+              </div>
+              
+              <div className="space-y-3">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                  Email*
+                </label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="seu@email.com"
+                  className="w-full bg-gray-50"
+                />
+              </div>
+              
+              <div className="space-y-3">
+                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                  WhatsApp (com DDD)*
+                </label>
+                <Input
+                  id="phone"
+                  name="phone"
+                  required
+                  placeholder="(00) 00000-0000"
+                  className="w-full bg-gray-50"
+                />
+              </div>
+              
+              <div className="space-y-3">
+                <label htmlFor="company" className="block text-sm font-medium text-gray-700">
+                  Empresa
+                </label>
+                <Input
+                  id="company"
+                  name="company"
+                  placeholder="Nome da sua empresa"
+                  className="w-full bg-gray-50"
                 />
               </div>
 
-              <div className="space-y-2">
-                <label htmlFor="message" className="block text-sm font-medium">
+              <div className="space-y-3">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                   Mensagem
                 </label>
                 <Textarea
                   id="message"
                   name="message"
-                  required
                   placeholder="Descreva seu projeto ou dúvida..."
-                  rows={5}
-                  className="w-full resize-none"
+                  rows={3}
+                  className="w-full resize-none bg-gray-50"
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-tech-blue hover:bg-tech-lightblue">
-                Enviar Mensagem
+              <div className="flex items-center space-x-2">
+                <Checkbox id="terms" required />
+                <label
+                  htmlFor="terms"
+                  className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                >
+                  Concordo com os termos de uso
+                </label>
+              </div>
+
+              <Button 
+                type="submit" 
+                className="w-full bg-[#F3E35C] hover:bg-[#F4D03F] text-tech-blue font-semibold flex items-center justify-center"
+              >
+                Enviar <ArrowRight size={16} className="ml-2" />
               </Button>
             </form>
-          </div>
-
-          {/* Contact Information */}
-          <div className="flex flex-col justify-between">
-            <div>
-              <h3 className="text-2xl font-bold mb-6 text-tech-blue">Informações de Contato</h3>
-              <p className="text-gray-600 mb-8">
-                Estamos disponíveis para responder suas dúvidas e discutir como podemos ajudar seu negócio com soluções tecnológicas inovadoras.
-              </p>
-              
-              <div className="space-y-6">
-                <div className="flex items-start">
-                  <div className="bg-tech-blue/10 p-3 rounded-full mr-4">
-                    <MapPin size={24} className="text-tech-blue" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Endereço</h4>
-                    <p className="text-gray-600">
-                      Av. Tecnologia, 1000<br />
-                      São Paulo, SP - Brasil<br />
-                      CEP: 01234-567
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="bg-tech-blue/10 p-3 rounded-full mr-4">
-                    <Phone size={24} className="text-tech-blue" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Telefone</h4>
-                    <p className="text-gray-600">+55 (11) 3456-7890</p>
-                    <p className="text-gray-600">+55 (11) 98765-4321</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
-                  <div className="bg-tech-blue/10 p-3 rounded-full mr-4">
-                    <Mail size={24} className="text-tech-blue" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-lg">Email</h4>
-                    <p className="text-gray-600">contato@techspark.com.br</p>
-                    <p className="text-gray-600">suporte@techspark.com.br</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-8 lg:mt-0">
-              <h4 className="font-semibold text-lg mb-3">Horário de Funcionamento</h4>
-              <p className="text-gray-600">Segunda a Sexta: 9h às 18h</p>
-              <p className="text-gray-600">Sábado: 9h às 13h</p>
-              <p className="text-gray-600">Domingo: Fechado</p>
-            </div>
           </div>
         </div>
       </div>
